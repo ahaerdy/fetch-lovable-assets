@@ -3,6 +3,22 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/);
 versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.1.0] - 2026-10-12
+
+### Adicionado
+- **Modo `--local`**: converte o código para usar imagens que já estão na máquina,
+  sem URL e sem internet. Remove os imports `*.asset.json`, troca `x.url` pelo
+  caminho local (`/images/...`) e troca URLs literais `/__l5e/...`.
+- Busca a imagem por nome em `public/images/` e no resto do projeto; copia para
+  `public/images/` quando a encontra em outra pasta.
+- Validação por tamanho (o registrado no ponteiro), para não usar versões antigas.
+- Opções `--dry-run`, `--images-dir`, `--remove-pointers`, `--ignore-size` e `--help`.
+- Relatório por imagem (`ok`, `copiada`, `ausente`, `tamanho`, `conflito`) e por arquivo alterado.
+
+### Alterado
+- Sem `LOVABLE_URL` e sem `--local`, a mensagem de erro agora sugere o modo local.
+- README reorganizado em torno dos dois modos, com guia de qual usar (incluindo deploy no Netlify).
+
 ## [1.0.0] - 2026-10-12
 
 ### Adicionado
